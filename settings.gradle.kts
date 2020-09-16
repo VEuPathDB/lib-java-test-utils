@@ -1,2 +1,2 @@
-rootProject.name = "lib-java-test-utils"
+rootProject.name = "test-utils"
 
