@@ -1,13 +1,13 @@
 import com.jfrog.bintray.gradle.BintrayExtension
 
 plugins {
-  java
+  `java-library`
   `maven-publish`
   id("com.jfrog.bintray") version "1.8.5"
 }
 
 group = "org.veupathdb.lib.test"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
   jcenter()
@@ -15,9 +15,9 @@ repositories {
 }
 
 dependencies {
-  implementation("org.junit.jupiter", "junit-jupiter-api", "5.7.0")
-  implementation("org.mockito", "mockito-core", "3.5.10")
-  implementation("org.mockito", "mockito-junit-jupiter", "3.5.10")
+  compile("org.junit.jupiter", "junit-jupiter-api", "5.7.0")
+  compile("org.mockito", "mockito-core", "3.5.10")
+  compile("org.mockito", "mockito-junit-jupiter", "3.5.10")
 }
 
 java {
