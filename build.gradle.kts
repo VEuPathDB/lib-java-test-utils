@@ -66,7 +66,7 @@ bintray {
   setPublications("gpr")
   pkg(delegateClosureOf<BintrayExtension.PackageConfig> {
     repo = "maven"
-    name = "lib-java-test-utils"
+    name = "test-utils"
     userOrg = "veupathdb"
     setVersion(rootProject.version)
   })
