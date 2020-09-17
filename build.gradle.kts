@@ -32,6 +32,12 @@ tasks.jar {
   }
 }
 
+tasks.register<Javadoc>("gitDocs") {
+  source = sourceSets.main.get().allJava
+  classpath = sourceSets.main.get().compileClasspath
+  setDestinationDir(file("docs"))
+}
+
 publishing {
   publications {
     create<MavenPublication>("gpr") {
