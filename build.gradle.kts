@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "org.veupathdb.lib.test"
-version = "1.1.1"
+version = "1.1.2"
 
 repositories {
   jcenter()

@@ -25,15 +25,11 @@ public class RandUtil
   }
 
   public static int randMinInt(final int minimum) {
-    var out = rand.nextInt();
-
-    return out < minimum ? out + minimum : out;
+    return randInt(minimum, Integer.MAX_VALUE);
   }
 
   public static int randMaxInt(final int maximum) {
-    var out = rand.nextInt();
-
-    return out > maximum ? out - maximum : out;
+    return randInt(Integer.MIN_VALUE, maximum);
   }
 
   public static long randLong() {
@@ -45,15 +41,11 @@ public class RandUtil
   }
 
   public static long randMinLong(final long minimum) {
-    var out = rand.nextLong();
-
-    return out < minimum ? out + minimum : out;
+    return randLong(minimum, Long.MAX_VALUE);
   }
 
   public static long randMaxLong(final long maximum) {
-    var out = rand.nextLong();
-
-    return out > maximum ? out - maximum : out;
+    return randLong(Long.MIN_VALUE, maximum);
   }
 
   public static OffsetDateTime randOffsetDateTime() {
