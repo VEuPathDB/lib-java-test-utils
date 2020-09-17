@@ -1,3 +1,5 @@
 = JUnit/Mockito Test Utilities
 
+https://veupathdb.github.io/lib-java-test-utils/org/veupathdb/lib/test/package-summary.html[JavaDocs]
+
 Provides a set of commonly used utilities to remove some unit test boilerplate.
