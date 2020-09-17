@@ -118,7 +118,11 @@ public class MockUtil
   ) throws Exception {
     var paramTypes = Arrays.stream(params).map(Object::getClass).toArray(Class[]::new);
 
-    var inst = type.getDeclaredConstructor(paramTypes).newInstance(params);
+    var con = type.getDeclaredConstructor(paramTypes);
+    con.setAccessible(true);
+
+    var inst = con.newInstance(params);
+
     var ref  = type.getDeclaredField(field);
     ref.setAccessible(true);
     ref.set(null, inst);
