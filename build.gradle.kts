@@ -10,7 +10,6 @@ group = "org.veupathdb.lib.test"
 version = "1.1.2"
 
 repositories {
-  jcenter()
   mavenCentral()
 }
 
@@ -39,6 +38,17 @@ tasks.register<Javadoc>("gitDocs") {
 }
 
 publishing {
+  repositories {
+    maven {
+      name = "GitHub"
+      url  = uri("https://maven.pkg.github.com/veupathdb/maven-packages")
+      credentials {
+        username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+        password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+      }
+    }
+  }
+
   publications {
     create<MavenPublication>("gpr") {
       from(components["java"])
@@ -63,17 +73,4 @@ publishing {
       }
     }
   }
-}
-
-bintray {
-  user = project.findProperty("bintray.user") as String? ?: ""
-  key  = project.findProperty("bintray.pass") as String? ?: ""
-  publish = true
-  setPublications("gpr")
-  pkg(delegateClosureOf<BintrayExtension.PackageConfig> {
-    repo = "maven"
-    name = "test-utils"
-    userOrg = "veupathdb"
-    setVersion(rootProject.version)
-  })
 }
