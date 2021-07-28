@@ -13,6 +13,11 @@ repositories {
   mavenCentral()
 }
 
+java {
+  targetCompatibility = JavaVersion.VERSION_15
+  sourceCompatibility = JavaVersion.VERSION_15
+}
+
 dependencies {
   compile("org.junit.jupiter", "junit-jupiter-api", "5.7.0")
   compile("org.mockito", "mockito-core", "3.5.10")
